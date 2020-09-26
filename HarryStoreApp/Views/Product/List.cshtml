@@ -1,0 +1,42 @@
+﻿@model IEnumerable<HarryStoreApp.Models.Product>
+@{
+    ViewBag.Title = "Index";
+}
+<h2>List of Product</h2>
+
+@if (!Model.Any())
+{
+    <p>There was no avaliable product</p>
+}
+else
+{
+    <p>  @Html.ActionLink("New Product", "New", "Product", null, new { @class = "btn btn-primary" })</p>
+
+
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Brand</th>
+                <th>Details</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var product in Model)
+                {
+            <tr>
+                <td> @Html.ActionLink(@product.Name, "Edit", "Product", new { id = product.Id }, null)</td>
+                <td>@product.Category.Name</td>
+                <td>@product.Brand.Name</td>
+                <td>@Html.ActionLink("Details", "Details", "Product", new { id = product.Id }, new { @class = "btn btn-info" })</td>
+                    
+            </tr>
+                }
+            }
+        </tbody>
+
+    </table>
+}

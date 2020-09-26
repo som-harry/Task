@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using HarryStoreApp.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace HarryStoreApp.Controllers
 {
@@ -155,6 +156,12 @@ namespace HarryStoreApp.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    //Temp code
+                    //var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    //var rolemanager = new RoleManager<IdentityRole>(roleStore);
+                    //await rolemanager.CreateAsync(new IdentityRole("CanManageCustomers"));
+                    //await UserManager.AddToRoleAsync(user.Id, "CanManageCustomers");  
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771

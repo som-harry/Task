@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace HarryStoreApp.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         public ActionResult Index()
