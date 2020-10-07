@@ -33,16 +33,15 @@ namespace HarryStoreApp.ViewModels
 
         [Display(Name = "Date of Adding")]
         [Required]
-        public DateTime? DateAdded { get; set; }
+        public DateTime DateAdded { get; set; } = DateTime.Now;
 
         [Display(Name = "Expiration date")]
         [Required]
         public DateTime? DateToExpire { get; set; }
 
-        [Display(Name = "Number Available")]
+        [Display(Name = "price")]
         [Required]
-        public int? NumberAvailable { get; set; }
-
+        public decimal Amount { get; set; }
 
         [Display(Name = "Category")]
         [Required]
@@ -56,7 +55,7 @@ namespace HarryStoreApp.ViewModels
         {
             get
             {
-                return Id != 0 ? "Edit Movie" : "New Movie";
+                return Id != 0 ? "Edit Product" : "New Product";
             }
         }
         public ProductFormViewModel()
@@ -72,7 +71,7 @@ namespace HarryStoreApp.ViewModels
             NumberInStock = product.NumberInStock;
             DateAdded = product.DateAdded;
             DateToExpire = product.DateToExpire;
-            NumberAvailable = product.NumberAvailable;
+            Amount = product.Amount;
 
         }
 

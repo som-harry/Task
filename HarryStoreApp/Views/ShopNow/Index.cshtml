@@ -1,0 +1,56 @@
+﻿@model IEnumerable<HarryStoreApp.Models.Product>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>ShopNow</h2>
+
+<div class="container-fluid">
+    <ul class="nav navbar-nav navbar-right" style="padding: 20px;">
+        <li class="navbar-btn" style="font-size: 40px">
+            @Html.ActionLink(" ", "OpenCart","ShopNow", null, new { @class = "glyphicon glyphicon-shopping-cart" })
+        </li>
+    </ul>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+   
+        <th>
+            @Html.DisplayNameFor(model => model.Amount)
+        </th>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.NumberInStock)
+        </th>
+      <th>
+           AddToCart
+        </th>
+       
+    </tr>
+
+@foreach (var product in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => product.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => product.Amount)
+        </td>
+        
+ 
+        <td>
+            @Html.DisplayFor(modelItem => product.NumberInStock)
+        </td>
+        <td>
+            @Html.ActionLink("Shop", "AddToCart", "ShopNow", new { productId = product.Id }, new { @class = "btn btn-info" })
+
+        </td>
+    </tr>
+}
+
+</table>

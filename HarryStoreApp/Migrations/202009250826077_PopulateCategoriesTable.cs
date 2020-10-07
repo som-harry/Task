@@ -15,6 +15,7 @@ namespace HarryStoreApp.Migrations
             Sql("INSERT INTO Categories (Name) VALUES ('Electronics')");
             Sql("INSERT INTO Categories (Name) VALUES ('Toys')");
             Sql("INSERT INTO Categories (Name) VALUES ('Supplements')");
+           
         }
         
         public override void Down()

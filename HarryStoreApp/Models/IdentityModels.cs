@@ -25,8 +25,11 @@ namespace HarryStoreApp.Models
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Brand> Brands { get; set; }
+        public DbSet<Cart>  Carts { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<Order> Orders { get; set; }
         public ApplicationDbContext()
-            : base("HarryStoreApp", throwIfV1Schema: false)
+            : base("SomStoreApp", throwIfV1Schema: false)
         {
             //Database.SetInitializer(new DropCreateDatabaseIfModelChanges<ApplicationDbContext>());
         }

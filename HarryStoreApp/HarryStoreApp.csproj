@@ -188,6 +188,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ShopNowController.cs" />
     <Compile Include="Dtos\CustomerDtos.cs" />
     <Compile Include="Dtos\MembershipTypeDtos.cs" />
     <Compile Include="Dtos\ProductDtos.cs" />
@@ -234,18 +235,88 @@
     <Compile Include="Migrations\202009261333424_SeedUsers.Designer.cs">
       <DependentUpon>202009261333424_SeedUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009300747392_AmountAddedToProduct.cs" />
+    <Compile Include="Migrations\202009300747392_AmountAddedToProduct.Designer.cs">
+      <DependentUpon>202009300747392_AmountAddedToProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009300801137_RechangeAmountDataType.cs" />
+    <Compile Include="Migrations\202009300801137_RechangeAmountDataType.Designer.cs">
+      <DependentUpon>202009300801137_RechangeAmountDataType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009301457502_SeedADefaultUser.cs" />
+    <Compile Include="Migrations\202009301457502_SeedADefaultUser.Designer.cs">
+      <DependentUpon>202009301457502_SeedADefaultUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009302327385_AddedOrderItemAndCartModel.cs" />
+    <Compile Include="Migrations\202009302327385_AddedOrderItemAndCartModel.Designer.cs">
+      <DependentUpon>202009302327385_AddedOrderItemAndCartModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010010040490_ChangeInCart.cs" />
+    <Compile Include="Migrations\202010010040490_ChangeInCart.Designer.cs">
+      <DependentUpon>202010010040490_ChangeInCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010010836471_stringToUserId.cs" />
+    <Compile Include="Migrations\202010010836471_stringToUserId.Designer.cs">
+      <DependentUpon>202010010836471_stringToUserId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010021923299_CleanUpMyCustomerModel.cs" />
+    <Compile Include="Migrations\202010021923299_CleanUpMyCustomerModel.Designer.cs">
+      <DependentUpon>202010021923299_CleanUpMyCustomerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010050246155_SettingUpCart.cs" />
+    <Compile Include="Migrations\202010050246155_SettingUpCart.Designer.cs">
+      <DependentUpon>202010050246155_SettingUpCart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010050250148_AddOrderTable.cs" />
+    <Compile Include="Migrations\202010050250148_AddOrderTable.Designer.cs">
+      <DependentUpon>202010050250148_AddOrderTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010061231387_ChangeDataType.cs" />
+    <Compile Include="Migrations\202010061231387_ChangeDataType.Designer.cs">
+      <DependentUpon>202010061231387_ChangeDataType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010061937545_RemoveNullableInProductKey.cs" />
+    <Compile Include="Migrations\202010061937545_RemoveNullableInProductKey.Designer.cs">
+      <DependentUpon>202010061937545_RemoveNullableInProductKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010062139044_AddNullableInCartKey.cs" />
+    <Compile Include="Migrations\202010062139044_AddNullableInCartKey.Designer.cs">
+      <DependentUpon>202010062139044_AddNullableInCartKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010062249567_AddNullableInCartKey1.cs" />
+    <Compile Include="Migrations\202010062249567_AddNullableInCartKey1.Designer.cs">
+      <DependentUpon>202010062249567_AddNullableInCartKey1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010062254353_NullInCartKey.cs" />
+    <Compile Include="Migrations\202010062254353_NullInCartKey.Designer.cs">
+      <DependentUpon>202010062254353_NullInCartKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010070411312_AddDatatype.cs" />
+    <Compile Include="Migrations\202010070411312_AddDatatype.Designer.cs">
+      <DependentUpon>202010070411312_AddDatatype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010070429333_AddDatatypeToCart.cs" />
+    <Compile Include="Migrations\202010070429333_AddDatatypeToCart.Designer.cs">
+      <DependentUpon>202010070429333_AddDatatypeToCart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Brand.cs" />
+    <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min400IfAMember.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CartServices.cs" />
+    <Compile Include="Services\CustomerService.cs" />
+    <Compile Include="Services\ProductService.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerFormViewModel.cs" />
     <Compile Include="ViewModels\ProductFormViewModel.cs" />
@@ -492,9 +563,14 @@
     <Content Include="Views\Product\ProductForm.cshtml" />
     <Content Include="Views\Product\List.cshtml" />
     <Content Include="Views\Customer\ReadOnlyList.cshtml" />
+    <Content Include="Views\ShopNow\Index.cshtml" />
+    <Content Include="Views\Customer\CreateCustomer.cshtml" />
+    <Content Include="Views\Customer\UpdateCustomerForm.cshtml" />
+    <Content Include="Views\ShopNow\OpenCart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Staff\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -539,6 +615,54 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009261333424_SeedUsers.resx">
       <DependentUpon>202009261333424_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009300747392_AmountAddedToProduct.resx">
+      <DependentUpon>202009300747392_AmountAddedToProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009300801137_RechangeAmountDataType.resx">
+      <DependentUpon>202009300801137_RechangeAmountDataType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009301457502_SeedADefaultUser.resx">
+      <DependentUpon>202009301457502_SeedADefaultUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009302327385_AddedOrderItemAndCartModel.resx">
+      <DependentUpon>202009302327385_AddedOrderItemAndCartModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010010040490_ChangeInCart.resx">
+      <DependentUpon>202010010040490_ChangeInCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010010836471_stringToUserId.resx">
+      <DependentUpon>202010010836471_stringToUserId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010021923299_CleanUpMyCustomerModel.resx">
+      <DependentUpon>202010021923299_CleanUpMyCustomerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010050246155_SettingUpCart.resx">
+      <DependentUpon>202010050246155_SettingUpCart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010050250148_AddOrderTable.resx">
+      <DependentUpon>202010050250148_AddOrderTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010061231387_ChangeDataType.resx">
+      <DependentUpon>202010061231387_ChangeDataType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010061937545_RemoveNullableInProductKey.resx">
+      <DependentUpon>202010061937545_RemoveNullableInProductKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010062139044_AddNullableInCartKey.resx">
+      <DependentUpon>202010062139044_AddNullableInCartKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010062249567_AddNullableInCartKey1.resx">
+      <DependentUpon>202010062249567_AddNullableInCartKey1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010062254353_NullInCartKey.resx">
+      <DependentUpon>202010062254353_NullInCartKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010070411312_AddDatatype.resx">
+      <DependentUpon>202010070411312_AddDatatype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010070429333_AddDatatypeToCart.resx">
+      <DependentUpon>202010070429333_AddDatatypeToCart.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

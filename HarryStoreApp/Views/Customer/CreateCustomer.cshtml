@@ -1,0 +1,12 @@
+﻿@model IList<HarryStoreApp.Models.MembershipType>
+@{
+    ViewBag.Title = "CreateCustomer";
+}
+<h2>CreateCustomer</h2>
+
+<select>
+    @foreach (var member in Model)
+    {
+        <option>@member.Name</option>
+    }
+</select>

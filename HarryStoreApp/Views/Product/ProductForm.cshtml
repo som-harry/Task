@@ -16,8 +16,8 @@
     </div>
     <div class="form-group">
 
-        @Html.LabelFor(m => m.DateToExpire);
-        @Html.TextBoxFor(m => m.DateToExpire, new { @class = " form-control" })
+        @Html.LabelFor(m => m.DateToExpire)
+        @Html.TextBoxFor(m => m.DateToExpire, "{0: d MMM yyyy}", new { @class = " form-control" })
         @Html.ValidationMessageFor(m => m.DateToExpire)
 
     </div>
@@ -25,16 +25,16 @@
 
 
 
-        @Html.LabelFor(m => m.DateAdded);
-        @Html.TextBoxFor(m => m.DateAdded,"{0: d mmm yyyy}", new { @class = " form-control" })
+        @Html.LabelFor(m => m.DateAdded)
+        @Html.TextBoxFor(m => m.DateAdded,"{0: d MMM yyyy}", new { @class = " form-control" })
         @Html.ValidationMessageFor(m => m.DateToExpire)
 
     </div>
     <div class="form-group">
 
-        @Html.LabelFor(m => m.NumberAvailable);
-        @Html.TextBoxFor(m => m.NumberAvailable, new { @class = " form-control" })
-        @Html.ValidationMessageFor(m => m.NumberAvailable)
+        @Html.LabelFor(m => m.Amount)
+        @Html.TextBoxFor(m => m.Amount, new { @class = " form-control" })
+        @Html.ValidationMessageFor(m => m.Amount)
 
     </div>
     <div class="form-group">

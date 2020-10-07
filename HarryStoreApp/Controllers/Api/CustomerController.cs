@@ -94,7 +94,8 @@ namespace HarryStoreApp.Controllers.Api
             if (customerInDb == null)
                 return NotFound();
 
-            _Context.Customers.Remove(customerInDb);
+
+            _Context.Entry(customerInDb).State = System.Data.Entity.EntityState.Deleted;
             _Context.SaveChanges();
 
             return Ok();

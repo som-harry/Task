@@ -1,0 +1,41 @@
+﻿@model HarryStoreApp.Models.Cart
+@{
+    ViewBag.Title = "OpenCart";
+}
+
+<h2>OpenCart</h2>
+<div class="container-fluid">
+    <div class="row">
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product Amount</th>
+                    <th>Product Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model.OrderItems)
+                {
+    <tr>
+        <td>@product.Product.Name</td>
+        <td>@product.Product.Amount</td>
+        <td>
+            @product.Quantity
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    @Html.ActionLink(" ", "IncreaseQuantity", new { productId = product.Id }, new { @class = "btn btn-primary glyphicon glyphicon-plus-sign" })
+                </li>
+                <li>
+                    @Html.ActionLink(" ", "DecreaseQuantity", new { productId = product.Id }, new { @class = "btn btn-danger glyphicon glyphicon-minus-sign" })
+                </li>
+            </ul>
+        </td>
+    </tr>            }
+            </tbody>
+        </table>
+
+        <button class="btn btn-success form-control">@Html.ActionLink("Check Out", "")</button>
+    </div>
+</div>
+

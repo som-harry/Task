@@ -20,6 +20,7 @@ else
                 <th>Category</th>
                 <th>Brand</th>
                 <th>Details</th>
+                <th>AddToCart</th>
 
             </tr>
         </thead>
@@ -32,6 +33,7 @@ else
                 <td>@product.Category.Name</td>
                 <td>@product.Brand.Name</td>
                 <td>@Html.ActionLink("Details", "Details", "Product", new { id = product.Id }, new { @class = "btn btn-info" })</td>
+                <td>@Html.ActionLink("AddToCart", "AddToCart", "Product", null, new { @class = "btn btn-info" })</td>
                     
             </tr>
                 }

@@ -20,6 +20,7 @@ else
                 <th>Category</th>
                 <th>Brand</th>
                 <th>Details</th>
+                <th>Price</th>
 
             </tr>
         </thead>
@@ -27,13 +28,14 @@ else
             @{
                 foreach (var product in Model)
                 {
-            <tr>
-                <td> @Html.ActionLink(@product.Name, "Edit", "Product", new { id = product.Id }, null)</td>
-                <td>@product.Category.Name</td>
-                <td>@product.Brand.Name</td>
-                <td>@Html.ActionLink("Details", "Details", "Product", new { id = product.Id }, new { @class = "btn btn-info" })</td>
-                    
-            </tr>
+                        <tr>
+                            <td> @Html.ActionLink(@product.Name, "Edit", "Product", new { id = product.Id }, null)</td>
+                            <td>@product.Category.Name</td>
+                            <td>@product.Brand.Name</td>
+                            <td>@Html.ActionLink("Details", "Details", "Product", new { id = product.Id }, new { @class = "btn btn-info" })</td>
+                            <td>$@product.Amount</td>
+
+                        </tr>
                 }
             }
         </tbody>

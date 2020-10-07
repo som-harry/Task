@@ -21,6 +21,8 @@ namespace HarryStoreApp.Models
 
         public int Quatity { get; set; }
 
+        public decimal Amount { get; set; }
+
         public DateTime DateAdded { get; set; }
 
         public DateTime? DateToExpire { get; set; }

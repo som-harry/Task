@@ -2,40 +2,69 @@
 @{
     ViewBag.Title = "New";
 }
-
-<h2>New Customer</h2>
 @using (Html.BeginForm("Save", "Customer"))
 {
-    @Html.ValidationSummary(true, "Please fix the following errors")
+    @Html.ValidationSummary()
     <div class="form-group">
 
-        @Html.LabelFor(m => m.Customer.Name)
-        @Html.TextBoxFor(m => m.Customer.Name, new { @class = " form-control" })
-        @Html.ValidationMessageFor(m => m.Customer.Name)
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = " form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
 
 
     </div>
-
     <div class="form-group">
 
-        @Html.LabelFor(m => m.Customer.MembershipTypeId)
-        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = " form-control" })
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = " form-control" })
+        @Html.ValidationMessageFor(m => m.Email)
+
+
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.PhoneNumber)
+        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = " form-control" })
+        @Html.ValidationMessageFor(m => m.PhoneNumber)
+
+
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.Password)
+        @Html.TextBoxFor(m => m.Password, new { @class = " form-control" })
+        @Html.ValidationMessageFor(m => m.Password)
+
+
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.ConfirmPassword)
+        @Html.TextBoxFor(m => m.ConfirmPassword, new { @class = " form-control" })
+        @Html.ValidationMessageFor(m => m.ConfirmPassword)
+
+
+    </div>
+    <div class="form-group">
+
+        @Html.LabelFor(m => m.MembershipTypeId)
+        @Html.DropDownListFor(m => m.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = " form-control" })
         @Html.ValidationMessageFor(m => m.MembershipTypeId)
     </div>
     <div class="form-group">
 
-        @Html.LabelFor(m => m.Customer.BalanceInAccount)
-        @Html.TextBoxFor(m => m.Customer.BalanceInAccount, new { @class = " form-control" })
-        @Html.ValidationMessageFor(m => m.Customer.BalanceInAccount)
+        @Html.LabelFor(m => m.BalanceInAccount)
+        @Html.TextBoxFor(m => m.BalanceInAccount, new { @class = " form-control" })
+        @Html.ValidationMessageFor(m => m.BalanceInAccount)
 
     </div>
     <div class="checkbox">
         <label>
-            @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsLetter) Subscribed To News Letter?
+            @Html.CheckBoxFor(m => m.IsSubscribedToNewsLetter) Subscribed To News Letter?
         </label>
     </div>
 
-    @Html.HiddenFor(m => m.Customer.Id)
+    @Html.HiddenFor(m => m.Id)
     @Html.AntiForgeryToken()
 
     <button type="submit" class="btn btn-primary">Save</button>

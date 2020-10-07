@@ -12,6 +12,12 @@ namespace HarryStoreApp.Migrations
             Sql("INSERT INTO Brands (Name) VALUES ('Happy Handi')");
             Sql("INSERT INTO Brands (Name) VALUES ('Catchy Ladies')");
             Sql("INSERT INTO Brands (Name) VALUES ('NBA')");
+            Sql("INSERT INTO Brands (Name) VALUES ('Benz')");
+            Sql("INSERT INTO Brands (Name) VALUES ('Provison')");
+            Sql("INSERT INTO Brands (Name) VALUES ('Fruits')");
+            Sql("INSERT INTO Brands (Name) VALUES ('LG')");
+            Sql("INSERT INTO Brands (Name) VALUES ('SamSong')");
+            Sql("INSERT INTO Brands (Name) VALUES ('Jack Canfield')");
         }
         
         public override void Down()
